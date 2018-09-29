@@ -55,7 +55,7 @@ class Main extends PluginBase implements Listener
         $player = $event->getPlayer();
         $name = $player->getName();
         $this->Main($player);
-        $event->setJoinMessage("§7[§9+§7] §9" . $name);
+        $event->setJoinMessage("");
 
     }
 
@@ -64,7 +64,7 @@ class Main extends PluginBase implements Listener
 
         $player = $event->getPlayer();
         $name = $player->getName();
-        $event->setQuitMessage("§7[§c-§7] §c" . $name);
+        $event->setQuitMessage("");
 
     }
 
@@ -150,7 +150,7 @@ class Main extends PluginBase implements Listener
 
         if ($item->getCustomName() == TextFormat::AQUA . "Profile") {
 
-            $this->getServer()->dispatchCommand($event->getPlayer(), "profil " . $player);
+            $this->getServer()->dispatchCommand($event->getPlayer(), "profile " . $player);
         }
 
         if ($item->getCustomName() == TextFormat::GREEN . "Info") {
