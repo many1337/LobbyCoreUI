@@ -255,19 +255,6 @@ class Main extends PluginBase implements Listener
         }
     }
 
-    public function getText(Player $player){
-        $text = '';
-        if (!empty($this->headBar)) $text .= $this->formatText($player, $this->headBar) . "\n" . "\n" . TextFormat::RESET;
-        $currentMSG = $this->cmessages[$this->i % count($this->cmessages)];
-        if (strpos($currentMSG, '%') > -1){
-            $percentage = substr($currentMSG, 1, strpos($currentMSG, '%') - 1);
-            if (is_numeric($percentage)) API::setPercentage(intval($percentage) + 0.5, $this->entityRuntimeId);
-            $currentMSG = substr($currentMSG, strpos($currentMSG, '%') + 2);
-        }
-        $text .= $this->formatText($player, $currentMSG);
-        return mb_convert_encoding($text, 'UTF-8');
-    }
-
     public function formatText(Player $player, string $text){
         $text = str_replace("{display_name}", $player->getDisplayName(), $text);
         $text = str_replace("{name}", $player->getName(), $text);
