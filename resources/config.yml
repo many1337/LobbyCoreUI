@@ -6,27 +6,23 @@
 
 # Item names (for the teleport items):
 
-Game-1-Name: Survival
-Game-2-Name: Plots
-Game-3-Name: SkyPvP
-Game-4-Name: BedWars
-Game-5-Name: MLG-Rush
+Game-1-Name: SkyBlock
+Game-2-Name: SkyWars
+Game-3-Name: BedWars
+Game-4-Name: TNTRun
+
 
 # Transfer (for the teleport / UI form):
 
-ip-port: transferserver 127.0.0.1 19132
-ip-port2: transferserver 127.0.0.1 19132
-ip-port3: transferserver 127.0.0.1 19132
-ip-port4: transferserver 127.0.0.1 19132
-ip-port5: transferserver 127.0.0.1 19132
+ip-port: transferserver 149.202.215.215 41127
 
 # BossBar EDIT
 
 head-message: "BossBar"
 changing-messages:
-  - "{0%}§l§eSet this bar announcements on config.yml file!"
-  - "{10%}§l§eWhat are you waiting for?"
-  - "{50%}§l§cLooks like you're having fun with BossBar"
+  - "{0%}§l§eSuscribe Minecraft PE Hindi For More!"
+  - "{10%}§l§eplay games?"
+  - "{50%}§l§cHave Fun On Server"
   - "{100%}§l§cLegends never surrendered"
 change-speed: 8
 worlds: []
