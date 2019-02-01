@@ -9,7 +9,6 @@ use pocketmine\Player;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
-// Mode CLOSED! use muqsit\invmenu\InvMenuHandler; 
 use pocketmine\Server;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
@@ -63,7 +62,6 @@ class Main extends PluginBase implements Listener
         $this->Main($player);
         $event->setJoinMessage("§7[§9+§7] §9" . $name);
         $this->getScheduler()->scheduleDelayedTask(new GuardianTask($this, $player), 30);
-    }
 
     }
 
@@ -102,6 +100,7 @@ class Main extends PluginBase implements Listener
         $player->getInventory()->setItem(4, Item::get(345)->setCustomName(TextFormat::YELLOW . "Navigator"));
         $player->getInventory()->setItem(0, Item::get(397, 3)->setCustomName(TextFormat::AQUA . "Profile"));
         $player->getInventory()->setItem(8, Item::get(399)->setCustomName(TextFormat::GREEN . "Info"));
+	$player->getInventory()->setItem(7, Item::get(287)->setCustomName(TextFormat::GOLD . "Effects"));
         $player->getInventory()->setItem(6, Item::get(288)->setCustomName(TextFormat::BLUE . "Fly"));
         $player->getInventory()->setItem(2, Item::get(280)->setCustomName(TextFormat::YELLOW . "Hide ".TextFormat::GREEN."Players"));
 
@@ -170,6 +169,45 @@ class Main extends PluginBase implements Listener
         if ($item->getCustomName() == TextFormat::AQUA . "Profile") {
 
             $this->getServer()->dispatchCommand($event->getPlayer(), "profil " . $player);
+        }
+
+	if ($item->getCustomName() == TextFormat::GOLD . "Effects") {
+	    $eff1 = $cfg->get("EffectName");
+            $eff2 = $cfg->get("EffectName2");
+            $eff3 = $cfg->get("EffectName3");
+            $eff4 = $cfg->get("EffectName4");
+            $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+            $form = $api->createSimpleForm(function (Player $sender, $data) {
+                $result = $data[0];
+
+                if ($result === null) {
+                    return true;
+                }
+                switch ($result) {
+                    case 0:
+				//later
+                        break;
+                    case 1:
+				//later
+                        break;
+                    case 2:
+				//later
+                        break;
+                    case 3:
+				//later
+                        break;
+
+
+                }
+            });
+            $form->setTitle("§l§aEffect Menu");
+            $form->setContent("Answer a Effect...");
+            $form->addButton(TextFormat::BOLD . $eff1);
+            $form->addButton(TextFormat::BOLD . $eff2);
+            $form->addButton(TextFormat::BOLD . $eff3);
+            $form->addButton(TextFormat::BOLD . $eff4);
+		
+            $form->sendToPlayer($player);
         }
 
         if ($item->getCustomName() == TextFormat::GREEN . "Info") {

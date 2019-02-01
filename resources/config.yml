@@ -20,5 +20,11 @@ ip-port3: transferserver 127.0.0.1 19132
 ip-port4: transferserver 127.0.0.1 19132
 ip-port5: transferserver 127.0.0.1 19132
 
-change-speed: 8
-worlds: []
+# Effects Menu Config
+
+EffectName:
+EffectName2:
+EffectName3:
+EffectName4:
+
+// Effect add later!
