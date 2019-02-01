@@ -25,12 +25,11 @@ use pocketmine\event\Listeners;
 use pocketmine\utils\TextFormat;
 use pocketmine\scheduler\Task;
 use pocketmine\level\Level;
+
 use many1337\task\GuardianTask;
+use many1337\commands\HubCommand;
 
-
-class Main extends PluginBase implements Listener
-{
-
+class Main extends PluginBase implements Listener {
     public function onEnable() {
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
@@ -48,15 +47,13 @@ class Main extends PluginBase implements Listener
         }
     }
 
-    public function onDisable()
-    {
+    public function onDisable() {
         foreach ($this->getServer()->getOnlinePlayers() as $p) {
             $p->transfer("80.99.208.62", "1941");
         }
     }
 
     public function onJoin(PlayerJoinEvent $event){
-
         $player = $event->getPlayer();
         $name = $player->getName();
         $this->Main($player);
