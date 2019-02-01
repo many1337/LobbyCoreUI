@@ -65,8 +65,6 @@ class Main extends PluginBase implements Listener
         $this->getScheduler()->scheduleDelayedTask(new GuardianTask($this, $player), 30);
     }
 
-    }
-
     public function onQuit(PlayerQuitEvent $event)
     {
 
