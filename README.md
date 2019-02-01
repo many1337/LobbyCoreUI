@@ -6,7 +6,7 @@ LobbyCore UI plugin 1.7
 - Inventory Items
 - [x] Player Info " Please use ProfileUI plugin ( https://github.com/Infernus101/ProfileUI ) "
 - [x] Navigator UI 
-- [x] BossBar
+- [x] GuardianOnJoin
 - [x] Fly UI 
 - [x] Hide-Show Players Item 
 - [x] Info UI 
