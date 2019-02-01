@@ -24,7 +24,9 @@ use pocketmine\event\entity\ProjectileHitEvent;
 use pocketmine\event\entity\ProjectileLaunchEvent;
 use pocketmine\event\Listeners;
 use pocketmine\utils\TextFormat;
+use pocketmine\scheduler\Task;
 use pocketmine\level\Level;
+use many1337\task\GuardianTask;
 
 
 class Main extends PluginBase implements Listener
@@ -47,13 +49,6 @@ class Main extends PluginBase implements Listener
         }
     }
 
-    public static function getInstance(){
-        return self::$instance;
-    }
-    public function onLoad(){
-        self::$instance = $this;
-    }
-
     public function onDisable()
     {
         foreach ($this->getServer()->getOnlinePlayers() as $p) {
@@ -67,6 +62,8 @@ class Main extends PluginBase implements Listener
         $name = $player->getName();
         $this->Main($player);
         $event->setJoinMessage("§7[§9+§7] §9" . $name);
+        $this->getScheduler()->scheduleDelayedTask(new GuardianTask($this, $player), 30);
+    }
 
     }
 
