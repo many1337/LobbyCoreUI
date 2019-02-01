@@ -10,8 +10,9 @@ use pocketmine\math\Vector3;
 use pocketmine\level\Level;
 use pocketmine\level\Position;
 use pocketmine\network\mcpe\protocol\LevelEventPacket;
+use pocketmine\scheduler\Task;
 
-class GuardianTask extends PluginTask{
+class GuardianTask extends Task{
 	
 	private $player;
 	private $plugin;
