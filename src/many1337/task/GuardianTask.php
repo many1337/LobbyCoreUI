@@ -2,7 +2,7 @@
 
 namespace many1337\task;
 
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task;
 use pocketmine\Server;
 use pocketmine\Player;
 use pocketmine\utils\TextFormat as TF;
@@ -11,7 +11,7 @@ use pocketmine\level\Level;
 use pocketmine\level\Position;
 use pocketmine\network\mcpe\protocol\LevelEventPacket;
 
-class GuardianTask extends PluginTask{
+class GuardianTask extends Task {
 	
 	private $player;
 	private $plugin;
