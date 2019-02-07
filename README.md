@@ -13,6 +13,7 @@ LobbyCore UI plugin 1.7
 - [x] Easy Config 
 - [x] Party Menu  
 -----------
+- [x] Guardian Join Effect
 Party Menu (In Plugin PHP)
 
 ### Thanks for downloading❤
