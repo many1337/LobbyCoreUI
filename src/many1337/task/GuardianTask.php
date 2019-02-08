@@ -10,6 +10,7 @@ use pocketmine\math\Vector3;
 use pocketmine\level\Level;
 use pocketmine\level\Position;
 use pocketmine\network\mcpe\protocol\LevelEventPacket;
+use many1337\Main;
 
 class GuardianTask extends Task {
 	
