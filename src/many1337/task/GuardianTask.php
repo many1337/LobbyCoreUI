@@ -2,7 +2,7 @@
 
 namespace many1337\task;
 
-use pocketmine\scheduler\Task;
+use pocketmine\scheduler\Task as PluginTask;
 use pocketmine\Server;
 use pocketmine\Player;
 use pocketmine\utils\TextFormat as TF;
@@ -10,6 +10,7 @@ use pocketmine\math\Vector3;
 use pocketmine\level\Level;
 use pocketmine\level\Position;
 use pocketmine\network\mcpe\protocol\LevelEventPacket;
+use many1337\Main;
 
 class GuardianTask extends Task {
 	
