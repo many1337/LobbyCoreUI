@@ -2,7 +2,7 @@
 
 namespace many1337\task;
 
-use pocketmine\scheduler\Task as PluginTask;
+use pocketmine\scheduler\Task;
 use pocketmine\Server;
 use pocketmine\Player;
 use pocketmine\utils\TextFormat as TF;
