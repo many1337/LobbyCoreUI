@@ -18,9 +18,8 @@ class GuardianTask extends Task {
 	private $plugin;
 	
 	public function __construct(Main $plugin, Player $player){
-        parent::__construct($plugin);
         $this->plugin = $plugin;
-		    $this->player = $player;
+	$this->player = $player;
 	}
 	
 	public function onRun(int $currentTick){
