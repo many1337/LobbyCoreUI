@@ -40,12 +40,6 @@ class Main extends PluginBase implements Listener
         if($api === null){
             $this->getServer()->getLogger()->notice("[LobbyCore] Please use a FormAPI plugin!");
         }
-
-        if($pri === null){
-            $this->getServer()->getLogger()->notice("[LobbyCore] Please use a ProfileUI plugin! 
-            (https://github.com/Infernus101/ProfileUI)");
-            $this->getServer()->getPluginManager()->disablePlugin($this);
-        }
     }
 
     public function onDisable()
@@ -98,9 +92,8 @@ class Main extends PluginBase implements Listener
     {
         $player->getInventory()->clearAll();
         $player->getInventory()->setItem(4, Item::get(345)->setCustomName(TextFormat::YELLOW . "Navigator"));
-        $player->getInventory()->setItem(0, Item::get(397, 3)->setCustomName(TextFormat::AQUA . "Profile"));
         $player->getInventory()->setItem(8, Item::get(399)->setCustomName(TextFormat::GREEN . "Info"));
-	$player->getInventory()->setItem(7, Item::get(287)->setCustomName(TextFormat::GOLD . "Effects"));
+	    $player->getInventory()->setItem(7, Item::get(287)->setCustomName(TextFormat::GOLD . "Effects"));
         $player->getInventory()->setItem(6, Item::get(288)->setCustomName(TextFormat::BLUE . "Fly"));
         $player->getInventory()->setItem(2, Item::get(280)->setCustomName(TextFormat::YELLOW . "Hide ".TextFormat::GREEN."Players"));
 
@@ -130,28 +123,32 @@ class Main extends PluginBase implements Listener
                         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
                         $ip = $cfg->get("ip-port");
                         $this->getServer()->getCommandMap()->dispatch($sender, $ip);
+                        $this->sendDimensionPacket($player, DimensionIds::THE_END);
                         break;
                     case 1:
                         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
                         $ip2 = $cfg->get("ip-port2");
                         $this->getServer()->getCommandMap()->dispatch($sender, $ip2);
+                        $this->sendDimensionPacket($player, DimensionIds::THE_END);
                         break;
                     case 2:
                         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
                         $ip3 = $cfg->get("ip-port3");
                         $this->getServer()->getCommandMap()->dispatch($sender, $ip3);
+                        $this->sendDimensionPacket($player, DimensionIds::THE_END);
                         break;
                     case 3:
                         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
                         $ip4 = $cfg->get("ip-port4");
                         $this->getServer()->getCommandMap()->dispatch($sender, $ip4);
+                        $this->sendDimensionPacket($player, DimensionIds::THE_END);
                         break;
                     case 4:
                         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
                         $ip5 = $cfg->get("ip-port5");
                         $this->getServer()->getCommandMap()->dispatch($sender, $ip5);
+                        $this->sendDimensionPacket($player, DimensionIds::THE_END);
                         break;
-
 
                 }
             });
@@ -164,11 +161,6 @@ class Main extends PluginBase implements Listener
             $form->addButton(TextFormat::BOLD . $game5);
             $form->sendToPlayer($player);
 
-        }
-
-        if ($item->getCustomName() == TextFormat::AQUA . "Profile") {
-
-            $this->getServer()->dispatchCommand($event->getPlayer(), "profil " . $player);
         }
 
 	if ($item->getCustomName() == TextFormat::GOLD . "Effects") {
@@ -262,5 +254,19 @@ class Main extends PluginBase implements Listener
                 $player->showplayer($p2);
             }
         }
+    }
+
+    public function sendDimensionPacket(Player $player, int $dimension){
+        if(
+            (!isset($player->dimension) && $dimension === DimensionIds::OVERWORLD) ||
+            $player->dimension === $dimension
+        ){
+            return; // ("Attempted to send ChangeDimensionPacket with the dimension the client already is in.");
+        }
+        $player->dimension = $dimension;
+        $pk = new ChangeDimensionPacket();
+        $pk->dimension = $dimension;
+        $pk->position = $player; //->asVector3() or basic posit...
+        $player->dataPacket($pk);
     }
 }
