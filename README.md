@@ -9,7 +9,7 @@ LobbyCore UI plugin 1.7
 - [x] Hide-Show Players Item 
 - [x] Info UI 
 - [x] Easy Config 
-- [x] Transfer Loading Screen - The End 
+- [x] Transfer Loading Screen - Edit the Config :+1:
 -----------
 - [x] Guardian Join Effect
 Party Menu (In Plugin PHP)
