@@ -122,32 +122,37 @@ class Main extends PluginBase implements Listener
                     case 0:
                         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
                         $ip = $cfg->get("ip-port");
+			$teleport1 = $cfg->get("loadingScreen1");
                         $this->getServer()->getCommandMap()->dispatch($sender, $ip);
-                        $this->sendDimensionPacket($player, DimensionIds::THE_END);
+                        $this->sendDimensionPacket($player, DimensionIds::$teleport1);
                         break;
                     case 1:
                         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
                         $ip2 = $cfg->get("ip-port2");
+			$teleport2 = $cfg->get("loadingScreen2");
                         $this->getServer()->getCommandMap()->dispatch($sender, $ip2);
-                        $this->sendDimensionPacket($player, DimensionIds::THE_END);
+                        $this->sendDimensionPacket($player, DimensionIds::$teleport2);
                         break;
                     case 2:
                         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
                         $ip3 = $cfg->get("ip-port3");
+			$teleport3 = $cfg->get("loadingScreen3");
                         $this->getServer()->getCommandMap()->dispatch($sender, $ip3);
-                        $this->sendDimensionPacket($player, DimensionIds::THE_END);
+                        $this->sendDimensionPacket($player, DimensionIds::$teleport3);
                         break;
                     case 3:
                         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
                         $ip4 = $cfg->get("ip-port4");
+			$teleport4 = $cfg->get("loadingScreen4");
                         $this->getServer()->getCommandMap()->dispatch($sender, $ip4);
-                        $this->sendDimensionPacket($player, DimensionIds::THE_END);
+                        $this->sendDimensionPacket($player, DimensionIds::$teleport4);
                         break;
                     case 4:
                         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
                         $ip5 = $cfg->get("ip-port5");
+		        $teleport5 = $cfg->get("loadingScreen5");
                         $this->getServer()->getCommandMap()->dispatch($sender, $ip5);
-                        $this->sendDimensionPacket($player, DimensionIds::THE_END);
+                        $this->sendDimensionPacket($player, DimensionIds::$teleport5);
                         break;
 
                 }
