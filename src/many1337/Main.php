@@ -272,7 +272,7 @@ class Main extends PluginBase implements Listener
         $player->dimension = $dimension;
         $pk = new ChangeDimensionPacket();
         $pk->dimension = $dimension;
-        $pk->position = $player; //->asVector3() or basic posit...
+        $pk->position = $this->player->asVector3();
         $player->dataPacket($pk);
     }
 }
