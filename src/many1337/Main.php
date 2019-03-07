@@ -21,6 +21,7 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerItemHeldEvent;
 use pocketmine\event\entity\ProjectileHitEvent;
 use pocketmine\event\entity\ProjectileLaunchEvent;
+use pocketmine\network\mcpe\protocol\ChangeDimensionPacket;
 use pocketmine\event\Listeners;
 use pocketmine\utils\TextFormat;
 use pocketmine\scheduler\Task;
