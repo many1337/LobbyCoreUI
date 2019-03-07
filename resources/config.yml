@@ -28,3 +28,16 @@ EffectName3:
 EffectName4:
 
 // Effect add later!
+
+# Loading Screen
+
+# Loading Screen types: 
+// OVERWORLD "Default Screen"
+// NETHER
+// THE_END
+
+loadingScreen1: OVERWORLD
+loadingScreen2: OVERWORLD
+loadingScreen3: OVERWORLD
+loadingScreen4: OVERWORLD
+loadingScreen5: OVERWORLD
