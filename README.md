@@ -3,7 +3,7 @@
 # CookieCore / LOBBY
 
 > Develop the basic LobbyCore of PocketMine/Altay Software...
-[![Discord](https://img.shields.io/discord/350333413737365522.svg?style=flat-square&label=discord&colorB=7289da)](https://discord.gg/rzCyPnG)[![Poggit](https://poggit.pmmp.io/ci.shield/many1337/CookieCore/~)](https://poggit.pmmp.io/ci/many1337/CookieCore/~)[![HitCount](http://hits.dwyl.io/many1337/CookieCore.svg)](http://hits.dwyl.io/many1337/CookieCore)
+[![Discord](https://img.shields.io/discord/350333413737365522.svg?style=flat-square&label=discord&colorB=7289da)](https://discord.gg/rzCyPnG)[![Poggit](https://poggit.pmmp.io/ci.shield/many1337/CookieCore/LobbyCoreGUI/~)](https://poggit.pmmp.io/ci/many1337/CookieCore/LobbyCoreGUI/~)[![HitCount](http://hits.dwyl.io/many1337/CookieCore.svg)](http://hits.dwyl.io/many1337/CookieCore)
 [![Donate](https://img.shields.io/badge/donate-PayPal-yellow.svg?style=flat-square)](paypal.me/manydarkyt)
 
 ## Tips
